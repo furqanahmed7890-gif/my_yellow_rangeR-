@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Xenia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="aurora"></div>
+  <div class="grain"></div>
+
+  <!-- START / VIDEO SCREEN -->
+  <section class="screen screen-video" id="videoScreen">
+    <video
+      id="memeVideo"
+      class="meme"
+      playsinline
+      preload="auto"
+      poster=""
+    >
+      <source src="assets/video.mp4" type="video/mp4">
+      Your browser can’t play this video.
+    </video>
+
+    <div class="videoOverlay">
+      <div class="videoCard">
+        <div class="chip">For Xenia</div>
+        <h1 class="heroTitle">I have something for you…</h1>
+        <p class="heroSub">Tap start. Watch till the end.</p>
+
+        <div class="row">
+          <button class="btn primary" id="startBtn" type="button">Start</button>
+          <button class="btn ghost" id="skipBtn" type="button">Skip</button>
+        </div>
+
+        <p class="tinyNote">
+          (Phones sometimes block autoplay with sound — if that happens, it’ll still play.)
+        </p>
+      </div>
+    </div>
+
+    <button class="soundBtn" id="soundBtn" type="button" aria-label="Mute or unmute" hidden>
+      Unmute
+    </button>
+  </section>
+
+  <!-- MAIN / VALENTINE SCREEN -->
+  <main class="screen screen-main" id="mainScreen" hidden>
+    <section class="card">
+      <header class="header">
+        <div class="chip">Valentine’s Invite</div>
+        <h2 class="name">Xenia</h2>
+        <p class="tagline">Made with love. Opened with a smile.</p>
+      </header>
+
+      <section class="photoWrap">
+        <img class="photo" src="assets/xenia.jpg" alt="Xenia" />
+      </section>
+
+      <section class="questionWrap">
+        <h3 class="question">Will you be my Valentine?</h3>
+        <p class="subq">Be honest… but choose wisely.</p>
+
+        <div class="buttons" id="buttons">
+          <button class="btn primary yes" id="yesBtn" type="button">YES</button>
+          <button class="btn ghost no" id="noBtn" type="button">NO</button>
+        </div>
+      </section>
+
+      <section class="reveal" id="reveal" hidden>
+        <h4 class="revealTitle">Perfect. It’s a date.</h4>
+        <p class="revealText">
+          Dinner at <b>Sultan Restaurant (Agawam)</b> on <b>Feb 14</b>.
+        </p>
+
+        <div class="row">
+          <a class="btn gold" id="smsLink" href="#" onclick="return false;">Text me “YES”</a>
+          <button class="btn ghost" id="musicBtn" type="button">Pause song</button>
+        </div>
+
+        <p class="tinyNote">I’m excited to take you out.</p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Background song (starts after the video / user tap) -->
+  <audio id="bgm" preload="auto" loop>
+    <source src="assets/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
